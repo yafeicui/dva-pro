@@ -11,7 +11,6 @@ createHttp();
 const app = dva({
   // history: createHistory(),
   // onError(e) {
-  //   console.log(e, 888999);
   //   message.error(e.message, /* duration */ 3);
   // }
 });
@@ -23,6 +22,9 @@ const app = dva({
 app.model(require('./models/layout').default);
 app.model(require('./models/device').default);
 app.model(require('./models/login').default);
+app.model(require('./models/put').default);
+app.model(require('./models/header').default);
+app.model(require('./models/approve').default);
 
 // 4. Router
 app.router(require('./router').default);

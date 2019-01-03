@@ -1,0 +1,11 @@
+{
+  "proxy": {
+    "/": {
+      "target": "http://ops.test.ximalaya.com/",
+      "changeOrigin": true
+    }
+  },
+  "extraBabelPlugins": [
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
+  ]
+}

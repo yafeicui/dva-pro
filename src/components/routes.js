@@ -9,7 +9,6 @@ const WelcomePage = dynamic({
 const HomePage = dynamic({ app, component: () => import('@/routes/home') });
 const DevicePage = dynamic({ app, component: () => import('@/routes/device') });
 const PutPage = dynamic({ app, component: () => import('@/routes/put') });
-const AuthorPage = dynamic({ app, component: () => import('@/routes/author') });
 const ApprovelPage = dynamic({
   app,
   component: () => import('@/routes/approvel')
@@ -57,13 +56,6 @@ export default {
           exact: true,
           author: ['creator'],
           comp: DevicePage
-        },
-        {
-          icon: 'key',
-          name: '授权管理',
-          path: '/page/author-manage',
-          author: ['admin', 'creator'],
-          comp: AuthorPage
         },
         {
           icon: 'file',

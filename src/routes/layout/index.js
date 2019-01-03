@@ -3,9 +3,10 @@ import { Layout, Menu, Icon } from 'antd';
 import { Route, Switch, Redirect } from 'dva/router';
 import { connect } from 'dva';
 import CrumbsPage from '@/components/crumbs/index';
+import HeaderPage from '@/routes/header';
 import styles from './index.less';
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
 
 const LayoutPage = ({ dispatch, layout }) => {
@@ -111,9 +112,7 @@ const LayoutPage = ({ dispatch, layout }) => {
         </Menu>
       </Sider>
       <Layout>
-        <Header style={{ background: '#fff', padding: 0 }}>
-          <div>头部</div>
-        </Header>
+        <HeaderPage />
         <div className={styles.crumbsCont}>
           <CrumbsPage params={layout.crumbsParams} />
         </div>
@@ -123,7 +122,8 @@ const LayoutPage = ({ dispatch, layout }) => {
             padding: 24,
             background: '#fff',
             minHeight: 280,
-            height: '100%'
+            height: '100%',
+            overflow: 'auto'
           }}
         >
           <Switch>{setRoute(layout.sideBarMenu)}</Switch>
